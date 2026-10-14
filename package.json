@@ -1,0 +1,37 @@
+{
+  "name": "jobhunt-ez",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.34.6",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "build": "pnpm backend:check && tsx scripts/build.ts",
+    "start": "pnpm --filter @jobhunt/api start",
+    "typecheck": "pnpm -r typecheck",
+    "backend:check": "pnpm --filter @jobhunt/api typecheck",
+    "lint": "eslint apps/web/src apps/api/src packages/shared/src scripts tests apps/web/next.config.ts apps/web/postcss.config.mjs apps/web/tailwind.config.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "test:integration": "node --test tests/integration/*.test.cjs",
+    "db:up": "docker compose up -d postgres",
+    "db:migrate": "pnpm --filter @jobhunt/api db:migrate",
+    "admin:grant": "pnpm --filter @jobhunt/api admin:grant",
+    "auth:verify": "pnpm --filter @jobhunt/api auth:verify"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "@types/node": "20.19.41",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.2.16",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.4.0",
+    "typescript": "5.9.3",
+    "tsx": "4.23.15",
+    "pg": "8.23.1",
+    "@next/env": "16.4.0",
+    "playwright-core": "1.60.0"
+  }
+}

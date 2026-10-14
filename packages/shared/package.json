@@ -1,0 +1,14 @@
+{
+  "name": "@jobhunt/shared",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./types": "./src/types/index.ts",
+    "./ai": "./src/types/ai.ts",
+    "./profile": "./src/profile.ts",
+    "./countries": "./src/countries.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}

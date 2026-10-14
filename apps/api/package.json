@@ -1,0 +1,43 @@
+{
+  "name": "@jobhunt/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx ../../scripts/dev.ts",
+    "start": "tsx --tsconfig tsconfig.json src/main.ts --production",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "db:migrate": "tsx --tsconfig tsconfig.json src/database/migrate.ts",
+    "admin:grant": "tsx --tsconfig tsconfig.json src/auth/admin-cli.ts",
+    "auth:verify": "tsx --tsconfig tsconfig.json src/auth/verify-cli.ts"
+  },
+  "dependencies": {
+    "@browserbasehq/sdk": "2.12.0",
+    "@browserbasehq/stagehand": "3.5.0",
+    "@nestjs/common": "11.2.7",
+    "@nestjs/core": "11.2.7",
+    "@nestjs/platform-express": "11.2.7",
+    "@next/env": "16.4.0",
+    "@react-pdf/renderer": "4.5.1",
+    "express": "5.3.0",
+    "next": "16.4.0",
+    "openai": "6.42.0",
+    "pdf-parse": "1.1.1",
+    "pg": "8.23.1",
+    "posthog-node": "5.35.12",
+    "react": "19.2.4",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "tsx": "4.23.15",
+    "zod": "4.4.3",
+    "@jobhunt/shared": "workspace:*"
+  },
+  "exports": {
+    "./context": "./src/context.ts",
+    "./auth/session": "./src/auth/session.ts",
+    "./auth/email-delivery": "./src/auth/email-delivery.ts",
+    "./profile/service": "./src/profile/service.ts",
+    "./admin/service": "./src/admin/service.ts",
+    "./ai/settings": "./src/ai/settings.ts",
+    "./ai/config": "./src/ai/config.ts"
+  }
+}
